@@ -3,15 +3,17 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
-#include <QPushButton>
+
 #include <QDebug>
+
 
 view::view(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::view)
 {
     ui->setupUi(this);
-    auto vlMain = new QVBoxLayout(ui->centralWidget);
+    auto vlMain = new QHBoxLayout(ui->centralWidget);
+    auto glMain = new QGridLayout();
     auto glLetters = new QGridLayout();
 
     //
@@ -28,7 +30,26 @@ view::view(QWidget *parent) :
 
         connect(btn, &QPushButton::clicked,this, &view::onLetterClicked);
     }
+    ui->centralWidget->setMinimumSize(800,700);
+    auto lblGallows = new QLabel();
+    auto lblWord = new QLabel();
+    lblGallows->setMinimumSize(300,500);
+    lblGallows->setMaximumSize(300,500);
+    lblGallows->setStyleSheet("background-color: rgb(170, 255, 0);");
 
+    lblWord->setText("test String");
+    auto btnPlay = new QPushButton();
+    btnPlay->setMinimumSize(100,35);
+    btnPlay->setText(" NEW WORD");
+
+    glMain->addWidget(lblGallows, 0, 0);
+    glMain->addLayout(glLetters, 0, 1);
+    glMain->addWidget(lblWord, 1, 0);
+    glMain->addWidget(btnPlay, 1, 1);
+
+
+
+    vlMain->addLayout(glMain);
     vlMain->addLayout(glLetters);
 }
 

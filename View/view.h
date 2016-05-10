@@ -2,7 +2,8 @@
 #define VIEW_H
 
 #include <QMainWindow>
-
+#include <QLabel>
+#include <QPushButton>
 namespace Ui {
 class view;
 }
@@ -17,6 +18,8 @@ public:
 public slots:
     void onLetterClicked();
 private:
+    QLabel* lblWord;
+    QPushButton* btnPlay;
     Ui::view *ui;
 };
 
