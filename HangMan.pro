@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-05-04T11:35:59
+# Project created by QtCreator 2016-05-03T13:42:21
 #
 #-------------------------------------------------
 
@@ -8,26 +8,22 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = HangMan
+TARGET = Hangman
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        View/view.cpp \
-    Model/model.cpp \
-    Controller/controller.cpp
+        Controller/mainwindow.cpp \
+    Model/hangmanclass.cpp
 
-HEADERS  +=  View/view.h\
-    Model/model.h \
-    Controller/controller.h
+HEADERS  += Controller/mainwindow.h \
+    Model/hangmanclass.h
 
-FORMS    +=  View/view.ui\
+FORMS    += View/mainwindow.ui
 
-
+RESOURCES += \
+    resources.qrc
 INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt"
 
 
 LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10150.0/ucrt/x64"
-
-RESOURCES += \
-    images/images.qrc

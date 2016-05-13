@@ -1,10 +1,17 @@
-#include "view.h"
+////////////////////////////////////////////////////////////
+///     Chris Arsenault
+///     QT
+///     Hangman project
+///
+///////////////////////////////////////////////////////////
+
+#include "Controller/mainwindow.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    view w;
+    MainWindow w;
     w.show();
 
     return a.exec();
